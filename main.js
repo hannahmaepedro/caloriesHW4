@@ -6,8 +6,8 @@ let someName = function(pName, pCalories){
     this.someCalories = parseInt(pCalories);
 }
 
-calories.push(new cal ("banana", 20));
-calories.push(new cal ("hot dog", 450));
+calories.push(new someName ("banana", 20));
+calories.push(new someName ("hot dog", 450));
 
 
 document.addEventListener("DOMContentLoaded", function (event) {
