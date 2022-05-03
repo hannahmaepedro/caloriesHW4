@@ -1,64 +1,33 @@
-document.addEventListener("DOMContentLoaded", function (event) {
-
-    document.getElementById("submitCalories").addEventListener("click", function () {
-            (document.getElementById("foodName").value,
-            document.getElementById("numberOfCalories").value);
-        console.log(FoodItemArray)
-        
-    });
-
-    // document.getElementById("totalCalories").addEventListener("click", function() {
-    //     console.log(FoodItemArray);
-    //     // for (i = 0; i < someName.length; i++) {
-    //     //     if (document.getElementById("foodName").value == FoodItemArray[i].someName){
-                
-    //     //     }
-    //     // }
-    // })
-});
-
-FoodItemArray = [];
+foodItemArray = [];
 
 //constructor
-let someName = function(pName, pCalories){
-    this.someName = parseInt(pName);
+let FoodItem = function(pName, pCalories){
+    this.someName = pName;
     this.someCalories = parseInt(pCalories);
-    this.calculateCal = function () {
-        for (let i in someCalories)
-        totalCalories += someCalories [i]
-    }
+};
 
-    let newSomeName1 = {
-        someName: "banana",
-        someCalories: 20,
-    }
+let newFood1 = new FoodItem("banana", 20)
+foodItemArray.push(newFood1);
 
-    let newSomeName2 = new someName2("hot dog", 450 );
+let newFood2 = new FoodItem("hot dog", 450 );
+foodItemArray.push(newFood2);
 
-    FoodItemArray.push(newSomeName1);
-    FoodItemArray.push(newSomeName2);
-    console.log(someName)
+console.log(foodItemArray)
 
-    document.getElementById("foodName").value = "",
-    document.getElementById("numberOfCalories").value = ""
-}
-
-// function submitCalories() {
-    // let newSomeName1 = {
-    //     someName: "banana",
-    //     someCalories: 20,
-    // }
-
-    // let newSomeName2 = new someName("hot dog", 450 );
-
-    // FoodItemArray.push(newSomeName1);
-    // FoodItemArray.push(newSomeName2);
-    // console.log(FoodItemArray)
-
-    // document.getElementById("foodName").value = "",
-    // document.getElementById("numberOfCalories").value = ""
-// }
-
-// function totalCalories() {
+   
     
-// }
+function formSubmitEvent() {
+    let total = 0;
+    let xsomeName = document.getElementById("foodName").value;
+    let xsomeCalories = document.getElementById("numberOfCalories").value;
+    foodItemArray.push(new FoodItem(xsomeName, xsomeCalories))
+   //clear text boxes
+        document.getElementById("foodName").value = "";
+        document.getElementById("numberOfCalories").value = "";
+
+        for (i = 0; i < foodItemArray.length; i++) {
+            total = total + foodItemArray[i].somecalories;
+        }
+
+    document.getElementById("totalCalories").value = total;
+}
