@@ -10,27 +10,24 @@
 <body>
 <h2>Track Calories</h2>
 
-<div id = "foodItem">
+<form name = "foodItem" onsubmit = "return false">
     <label for = "foodName">Food Name:</label>
     <input name = "foodName" id="foodName" />
     <br>
-    <label for = "numberOfCalories">Number of Calories:</label>
-    <input name = "numberOfCalories" id="numberOfCalories" />
-    <br>
-</div>
 
-<button type="button" id="submitCalories">Submit</button>
+    <label for = "numberOfCalories">Number of Calories:</label>
+    <input name = "numberOfCalories" id="numberOfCalories" /> <br>
+    <!--  here we submit to a local js file  -->
+    <input type ="submit" value="Submit" onclick="formSubmitEvent()">
+</form>
+
+<!-- <button type="button" id="submitCalories">Submit</button> -->
 <br><br>
 
-<div id ="total">
-    <label for = "totalCalories">Total Calories</label>
-    <input name = "text" id = "buttonTotalCal" /> <br>
-    <br>
-</div>
 
-
-    
-</ul>
+<label for = "totalCalories">Total Calories</label>
+<input name = "totalCalories" id = "totalCalories" /> <br>
+<br>
 
 
 <script src="main.js"></script>
